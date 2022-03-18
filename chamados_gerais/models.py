@@ -2,9 +2,9 @@ from turtle import title
 from django.db import models
 from django.contrib.auth import get_user_model
 #import matplotlib matplotlib.use('Agg')  # Must be done before importing pyplot import matplotlib.pyplot as plt
-import tkinter
-top = tkinter.Tk();
-top = tkinter.mainloop();
+#import tkinter
+#top = tkinter.Tk();
+#top = tkinter.mainloop();
 
 # Create your models here. esse
 
@@ -25,7 +25,7 @@ class Chamado_geral(models.Model):
         choices=STATUS,
     )
 
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, blank=True, null=True)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     #com esse comando abaixo pegamos a data da solicitação
     created_at = models.DateTimeField(auto_now_add=True)
     # o comando abaixo serve para sempre que alguém alterar o status o db seja atualizado de acordo
